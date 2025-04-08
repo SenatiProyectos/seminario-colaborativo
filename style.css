@@ -88,13 +88,87 @@ body{
     transition: transform 0.5s, border-bottom 0.5s;
 }
 
+/* --------------------------------------------------------------- */
 .mainIndex{
-    height: 89dvh;
     width: 90%;
     margin: auto;
     border-radius: 15px;
-    outline: solid 2px purple;
+    /* outline: solid 2px purple; */
+    padding: 1px;
+    box-sizing: border-box;
 }
+
+.ctnCategorias{
+    width: 80%;
+    margin: 7dvh auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5dvh;
+}
+
+.subtitulo{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.listCategorias{
+    display: flex;
+    flex-direction: row;
+    gap: 4dvh;
+    list-style: none;
+}
+
+.itemListCategoria{
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    gap: 1dvh;
+    outline: solid 2px white;
+    padding: 2dvh;
+    color: white;
+    font-weight: 600;
+    border-radius: 15px;
+    width: 150px;
+    transition: transform 0.5s, background-color 0.5s;
+}
+
+.itemListCategoria:hover{
+    transform: scale(1.1);
+    background-color: rgb(1, 1, 110);
+    transition: transform 0.5s, background-color 0.5s;
+}
+
+
+
+
+
+
+.ctnPrductos{
+    width: 80%;
+    margin: 7dvh auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5dvh;
+}
+
+.listProductos{
+    list-style: none;
+    display: grid;
+    gap: 5dvh;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.itemProducto{
+    height: 300px;
+    /* width: 200px; */
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------- */
 
 .footer{
     height: 10dvh;
