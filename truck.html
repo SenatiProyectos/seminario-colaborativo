@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Agregar Producto</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .formularioProducto {
+      background-color: #2e2e2e;
+      color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 60%;
+      margin: 3rem auto;
+      box-shadow: 0 0 10px rgba(155, 0, 202, 0.5);
+    }
+
+    .formularioProducto h2 {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .formGroup {
+      margin-bottom: 1rem;
+    }
+
+    .formGroup label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .formGroup input {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .formGroup input:focus {
+      outline: 2px solid purple;
+    }
+
+    .btnEnviar {
+      background-color: purple;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 1rem auto 0;
+    }
+
+    .btnEnviar:hover {
+      background-color: #9b00ca;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="barraNav">
+      <ul class="listNav">
+        <li class="itemListNav">Inicio</li>
+        <li class="itemListNav">Productos</li>
+        <li class="itemListNav">Agregar</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="mainIndex">
+    <section class="formularioProducto">
+      <h2>Agregar Producto</h2>
+      <form id="formAgregarProducto">
+        <div class="formGroup">
+          <label for="descripcion">Descripción</label>
+          <input type="text" id="descripcion" name="descripcion" required>
+        </div>
+        <div class="formGroup">
+          <label for="precio">Precio</label>
+          <input type="number" id="precio" name="precio" step="0.01" required>
+        </div>
+        <div class="formGroup">
+          <label for="stock">Stock</label>
+          <input type="number" id="stock" name="stock" required>
+        </div>
+        <div class="formGroup">
+          <label for="img">Imagen</label>
+          <input type="text" id="img" name="img" placeholder="sin-imagen">
+        </div>
+        <button type="submit" class="btnEnviar">Guardar Producto</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <!-- Aquí va tu pie de página -->
+  </footer>
+
+  <script>
+    const productoMock = {
+      id: 0,
+      descripcion: "Panadol Forte",
+      precio: "99.0",
+      stock: "29",
+      img: "sin-imagen"
+    };
+
+    document.getElementById("formAgregarProducto").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nuevoProducto = {
+        id: Date.now(),
+        descripcion: document.getElementById("descripcion").value,
+        precio: document.getElementById("precio").value,
+        stock: document.getElementById("stock").value,
+        img: document.getElementById("img").value || "sin-imagen"
+      };
+
+      console.log("Producto agregado:", nuevoProducto);
+      alert("Producto agregado con éxito");
+
+      // Opcional: Limpiar formulario
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
