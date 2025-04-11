@@ -90,9 +90,8 @@ async function main(){
     const service = new ProductoServicio()
     await service.abrirDB()
     await service.agregarProducto({descripcion: "PC Gamer", precio: "999"})
-    service.
     const productos = await service.obtenerProductos()
     console.log(productos)
 }
 
-main()
+// main()
