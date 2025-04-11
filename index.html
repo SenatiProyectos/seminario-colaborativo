@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD</title>
     <script src="db.js"></script>
+    <script src="scriptIndex.js"></script>
 </head>
 <body>
     <header class="header">
@@ -42,16 +43,18 @@
         </div>
         <div class="ctnPrductos">
             <h3 class="subtitulo">Productos</h3>
-            <ul class="listProductos">
-                <li class="itemProducto"></li>
-                <li class="itemProducto"></li>
-                <li class="itemProducto"></li>
-                <li class="itemProducto"></li>
-                <li class="itemProducto"></li>
-                <li class="itemProducto"></li>
-                <li class="itemProducto"></li>
-                <li class="itemProducto"></li>
-            </ul>
+            
+            <ul class="listProductos"></ul>
+
+            <!-- CATALOGO DE PRODUCTOS -->
+            <template id="templateProducto">
+                <li class="itemProducto">
+                    <img id="productoImg" src="" alt="">
+                    <p id="productoDescripcion"></p>
+                    <p id="productoPrecio"></p>
+                    <p id="productoStock"></p>
+                </li>
+            </template>
         </div>
     </main>
     <footer class="footer">
