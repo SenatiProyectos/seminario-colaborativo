@@ -63,10 +63,10 @@
     <nav class="barraNav">
         <h1 class="title">CRUD</h1>
         <ul class="listNav">
-            <li class="itemListNav"><a href="index.html">Inicio</a></li>
-            <li class="itemListNav"><a href="truck.html">Añadir</a></li>
-            <li class="itemListNav">Otros</li>
-        </ul>
+          <a href="index.html"><li class="itemListNav">Inicio</li></a>
+          <a href="truck.html"><li class="itemListNav">Añadir</li></a>
+          <a href="#"><li class="itemListNav">Otros</li></a>
+      </ul>
     </nav>
   </header>
 
@@ -98,34 +98,35 @@
   <footer class="footer">
     <!-- Aquí va tu pie de página -->
   </footer>
-
+  
+  <script src="db.js"></script>
   <script>
-    const productoMock = {
-      id: 0,
-      descripcion: "Panadol Forte",
-      precio: "99.0",
-      stock: "29",
-      img: "sin-imagen"
-    };
-
-    document.getElementById("formAgregarProducto").addEventListener("submit", function(e) {
-      e.preventDefault();
-
+    const productoServicio = new ProductoServicio()
+  
+    // Abrir la base de datos
+    document.addEventListener("DOMContentLoaded", async () => {
+      await productoServicio.abrirDB()
+    })
+  
+    document.getElementById("formAgregarProducto").addEventListener("submit", async function (e) {
+      e.preventDefault()
+  
       const nuevoProducto = {
-        id: Date.now(),
         descripcion: document.getElementById("descripcion").value,
         precio: document.getElementById("precio").value,
         stock: document.getElementById("stock").value,
         img: document.getElementById("img").value || "sin-imagen"
-      };
-
-      console.log("Producto agregado:", nuevoProducto);
-      alert("Producto agregado con éxito");
-
-      // Opcional: Limpiar formulario
-      this.reset();
-    });
+      }
+  
+      try {
+        await productoServicio.agregarProducto(nuevoProducto)
+        alert("Producto agregado con éxito")
+        this.reset()
+      } catch (error) {
+        alert("Error al guardar el producto: " + error)
+        console.error(error)
+      }
+    })
   </script>
-
 </body>
 </html>
