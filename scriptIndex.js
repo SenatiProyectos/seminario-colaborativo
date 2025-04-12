@@ -13,7 +13,7 @@ function crearCatalogoProducto(producto){
     const stock = clone.querySelector('#productoStock')
 
     // Coloca los datos del producto al elemento
-    img.src = rutaBaseImagenes + producto.img
+    img.src = rutaBaseImagenes + producto.img + ".webp"
     descripcion.textContent = producto.descripcion
     precio.textContent = "S/." + producto.precio
     stock.textContent = producto.stock
