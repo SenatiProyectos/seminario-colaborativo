@@ -88,7 +88,9 @@
         </div>
         <div class="formGroup">
           <label for="img">Imagen</label>
-          <input type="text" id="img" name="img" placeholder="sin-imagen">
+          <select type="text" id="img" name="img">
+            <option value=""></option>
+          </select>
         </div>
         <button type="submit" class="btnEnviar">Guardar Producto</button>
       </form>
@@ -106,7 +108,7 @@
     // Abrir la base de datos
     document.addEventListener("DOMContentLoaded", async () => {
       await productoServicio.abrirDB()
-    })
+      })
   
     document.getElementById("formAgregarProducto").addEventListener("submit", async function (e) {
       e.preventDefault()
