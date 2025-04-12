@@ -170,6 +170,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 2dvh;
+    height: 330px;
     background: linear-gradient(4deg, #3d0048, #000000);
     border-radius: 10px;
     cursor: pointer;
@@ -184,17 +185,14 @@ body{
 }
 
 .ctnImgProducto{
-    height: 250px;
+    /* height: 250px; */
     /* background-color: antiquewhite; */
-    width: 100%;
+    /* width: 100%; */
     border-radius: 10px;
 }
 
-.productoImg{
+#productoImg{
     width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 10px;
 }
 
 .ctnDescription{
